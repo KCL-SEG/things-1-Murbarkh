@@ -13,5 +13,7 @@ class Thing(models.Model):
         )
     description = models.CharField(
         max_length=120,
+        blank=True,
+        unique=False
     )
     quanitity = models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(100)])

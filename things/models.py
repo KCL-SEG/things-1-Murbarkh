@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 
@@ -13,7 +14,4 @@ class Thing(models.Model):
     description = models.CharField(
         max_length=120,
     )
-    quanitity = models.IntegerField(
-        max_value= 100,
-        min_value = 0
-    )
+    quanitity = models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(100)])

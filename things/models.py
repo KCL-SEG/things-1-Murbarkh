@@ -15,6 +15,8 @@ class Thing(models.Model):
     description = models.CharField(
         max_length=120,
         unique=False,
-        blank=True,
+        blank=True
                                    )
     quantity = models.PositiveIntegerField(validators=[MaxValueValidator(100)])
+
+
